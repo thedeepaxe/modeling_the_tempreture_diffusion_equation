@@ -1,0 +1,33 @@
+from tkinter import CENTER
+from manim import *
+class scene(Scene):
+    def construct(self):
+        self.wait(3)
+        math = dict()
+        brace = BraceBetweenPoints([-4,2,0],[-4,-1,0])
+        math ["equation"]= MathTex("A","X","=","B").scale(1.5).move_to([4,1,0])
+        math ["system1"] = MathTex("\\frac{T_{k+1}+T_{k-1}-2.T_k}{(\\frac {L}{N})^2}","="," -\\frac{f}{\\lambda}").next_to(brace,RIGHT)
+        math ["system2"] = MathTex("for \\,k \\, \\in \\, \\{1..N-1\\}").next_to(math["system1"],DOWN)
+        self.play(FadeIn(brace))
+        self.play(Write(math["system1"]),Write(math["system2"]))
+        self.play(VGroup(brace,math["system1"],math["system2"]).animate.shift(LEFT+UP))
+        self.play(Write(math["equation"]))
+        math["A"]= math["equation"][0].copy()
+        self.play(math["A"].animate.move_to([-3,-2,0]))
+        self.wait(2)
+        math["A="]=MathTex("=","(\\frac{N}{L})^2","\\left(\\begin{array}{rrrrrr}-2 & 1 & 0 & 0  &\\cdots &0 \\\ 1 & -2 & 1  & \\ddots & \\cdots & 0 \\\ 0 & \\ddots & \\ddots   & \\ddots & \\ddots & \\vdots \\\ \\vdots & \\ddots & \\ddots   & \\ddots & \\ddots & 0  \\\ \\vdots  & \\cdots & \\ddots    & \\ddots  & \\ddots & 1 \\\ 0  & \\cdots & \\cdots    & 0  &1 &-2\\end{array}\\right)").next_to(math["A"],RIGHT).scale(0.8)
+        self.play(TransformMatchingShapes(math["equation"][0].copy(),math["A="]),run_time=2)
+        self.wait(2)
+        self.play(FadeOut(math["A="]),FadeOut(math["A"]))
+        self.wait()
+        math["X"]= math["equation"][1].copy()
+        self.play(math["X"].animate.move_to([-3,-2,0]))
+        math["X="]=MathTex("=","\\left(\\begin{array}{r}T_1 \\\ T_2 \\\ \\vdots   \\\ T_{N-1}\\end{array}\\right)").next_to(math["A"],RIGHT).scale(0.8)
+        self.play(TransformMatchingShapes(math["equation"][1].copy(),math["X="]),run_time=2)
+        self.wait(2)
+        self.play(FadeOut(math["X="]),FadeOut(math["X"]))
+        self.play(FadeOut(brace),FadeOut(math["system1"]),FadeOut(math["system2"]))
+        self.wait(3)
+        self.play(math["equation"].animate.move_to([0,0,0]))
+        self.wait(4)
+        #"A=\\left(\\begin{array}{rrrr}2 & 1 & 0&0 & \\cdots &0 \\ 1 & -2 & 1  & \\ddots & \\cdots & 0 \\ 0 & \\ddots &\\ddots   & \\ddots &\\ddots &\\vdots \\ \\vdots &\\ddots &\\ddots   & \\ddots &\\ddots &0  \\ \\vdots  & \\cdots & \\ddots    & \\ddots  &\\ddots &1\\ 0  & \\cdots & \\cdots    & 0  &1 &-2\\end{array}\\right)"
