@@ -19,6 +19,7 @@ In what follows, we will go over the next chapters:
 Manim is an engine for precise programmatic animations, designed for creating explanatory math videos.it's a free and open-source project originally written by Grant Sanderson. It is now maintained by the Manim Community and permissively released under the MIT license.
 
 [Manim community](https://www.manim.community/)
+
 [Manim installation](https://github.com/3b1b/manim)
 
 ## project description
