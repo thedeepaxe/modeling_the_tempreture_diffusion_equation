@@ -1,4 +1,4 @@
-#modeling_the_tempreture_diffusion_equation
+# modeling_the_tempreture_diffusion_equation
 
 This project is one of the projects I take the most pride in. As it connects math visualization, math modeling, and optimization-solving algorithms(linear regression).
 In what follows, we will go over the next chapters:
