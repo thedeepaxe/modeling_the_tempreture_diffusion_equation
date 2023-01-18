@@ -1,6 +1,8 @@
 # modeling_the_tempreture_diffusion_equation
 
-This project is one of the projects I take the most pride in. As it connects math visualization, math modeling, and optimization-solving algorithms(linear regression).
+
+This project is one of the projects I take the most pride in and I really had fun working on it. As it connects math visualization, math modeling, and optimization-solving algorithms(linear regression) which are all domaines that intregue me. you can find the resulting video [here](https://www.youtube.com/watch?v=uNZq8XoV4Vg&t=6s&ab_channel=karimFEKI), enjoyyy.
+
 In what follows, we will go over the next chapters:
 
 ### 1.heavy influence from 3B1b
